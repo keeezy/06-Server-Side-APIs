@@ -31,6 +31,49 @@ var day1TempEl = document.querySelector('#day1Temp');
 var day1WindEl = document.querySelector('#day1Wind');
 var day1HumidityEl = document.querySelector('#day1Humidity');
 
+// Day 2
+var day2CardHeaderEl = document.querySelector('#day2CardHeader');
+var day2Icon;
+var day2IconSource;
+var day2IconDescription;
+var day2IconEl = document.querySelector('#day2Icon');
+var day2TempEl = document.querySelector('#day2Temp');
+var day2WindEl = document.querySelector('#day2Wind');
+var day2HumidityEl = document.querySelector('#day2Humidity');
+
+// Day 3
+var day3CardHeaderEl = document.querySelector('#day3CardHeader');
+var day3Icon;
+var day3IconSource;
+var day3IconDescription;
+var day3IconEl = document.querySelector('#day3Icon');
+var day3TempEl = document.querySelector('#day3Temp');
+var day3WindEl = document.querySelector('#day3Wind');
+var day3HumidityEl = document.querySelector('#day3Humidity');
+
+// Day 4
+var day4CardHeaderEl = document.querySelector('#day4CardHeader');
+var day4Icon;
+var day4IconSource;
+var day4IconDescription;
+var day4IconEl = document.querySelector('#day4Icon');
+var day4TempEl = document.querySelector('#day4Temp');
+var day4WindEl = document.querySelector('#day4Wind');
+var day4HumidityEl = document.querySelector('#day4Humidity');
+
+// Day 5
+var day5CardHeaderEl = document.querySelector('#day5CardHeader');
+var day5Icon;
+var day5IconSource;
+var day5IconDescription;
+var day5IconEl = document.querySelector('#day5Icon');
+var day5TempEl = document.querySelector('#day5Temp');
+var day5WindEl = document.querySelector('#day5Wind');
+var day5HumidityEl = document.querySelector('#day5Humidity');
+
+// Button
+var searchButton = document.getElementById('search-button');
+
 // Handler for Search Button
 var searchButtonHandler = function (event) {
     event.preventDefault();
