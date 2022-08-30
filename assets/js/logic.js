@@ -32,3 +32,5 @@ var searchButtonHandler = function (event) {
         alert('Please enter a City');
     }
 };
+
+searchButton.addEventListener('click', searchButtonHandler);
