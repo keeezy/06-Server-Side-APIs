@@ -21,6 +21,16 @@ var weatherTodayIcon;
 var weatherTodayIconSource;
 var weatherTodayDescription;
 
+// Day 1
+var day1CardHeaderEl = document.querySelector('#day1CardHeader');
+var day1IconEl = document.querySelector('#day1Icon');
+var day1Icon;
+var day1IconSource;
+var day1IconDescription;
+var day1TempEl = document.querySelector('#day1Temp');
+var day1WindEl = document.querySelector('#day1Wind');
+var day1HumidityEl = document.querySelector('#day1Humidity');
+
 // Handler for Search Button
 var searchButtonHandler = function (event) {
     event.preventDefault();
@@ -102,6 +112,7 @@ function getWeatherData(citySearchInput) {
                 };
 
                 // Day 1
+                day1CardHeaderEl.textContent = (date + 1); //Doesn't Work
                 // Day 1 Icon
                 day1Icon = data.daily[0].weather[0].icon;
                 day1IconSource = ('https://openweathermap.org/img/wn/' + day1Icon + '@2x.png')
@@ -118,6 +129,7 @@ function getWeatherData(citySearchInput) {
                 day1HumidityEl.innerHTML = (data.daily[0].humidity + "%");
 
                 // Day 3
+                day3CardHeaderEl.textContent = (date + 3); //Doesn't Work
                 // Day 3 Icon
                 day3Icon = data.daily[2].weather[0].icon;
                 day3IconSource = ('https://openweathermap.org/img/wn/' + day3Icon + '@2x.png')
@@ -134,6 +146,7 @@ function getWeatherData(citySearchInput) {
                 day3HumidityEl.innerHTML = (data.daily[2].humidity + "%");
 
                 // Day 4
+                day4CardHeaderEl.textContent = (date + 4); //Doesn't Work
                 // Day 4 Icon
                 day4Icon = data.daily[3].weather[0].icon;
                 day4IconSource = ('https://openweathermap.org/img/wn/' + day4Icon + '@2x.png')
@@ -150,6 +163,7 @@ function getWeatherData(citySearchInput) {
                 day4HumidityEl.innerHTML = (data.daily[3].humidity + "%");
 
                 // Day 5
+                day5CardHeaderEl.textContent = (date + 5); //Doesn't Work
                 // Day 5 Icon
                 day5Icon = data.daily[4].weather[0].icon;
                 day5IconSource = ('https://openweathermap.org/img/wn/' + day5Icon + '@2x.png')
@@ -164,7 +178,6 @@ function getWeatherData(citySearchInput) {
                 day5WindEl.innerHTML = (data.daily[4].wind_speed + " MPH");
                 // Day 5 Humidity
                 day5HumidityEl.innerHTML = (data.daily[4].humidity + "%");
-
             });
         } else {
             alert('Error: ' + response.statusText);
@@ -173,5 +186,5 @@ function getWeatherData(citySearchInput) {
 }
 
 function kToF(tempK) {
-    return Math.floor((tempK - 273.15) *1.8 +32);
+    return Math.floor((tempK - 273.15) * 1.8 + 32);
 }
