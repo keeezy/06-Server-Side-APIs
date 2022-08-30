@@ -33,4 +33,26 @@ var searchButtonHandler = function (event) {
     }
 };
 
-searchButton.addEventListener('click', searchButtonHandler);
+// Renders Search History to Buttons
+function renderHistory() {
+    var retrievedHistory = localStorage.getItem('searchHistory');
+    var searchHistoryParse = JSON.parse(retrievedHistory);
+
+    // Creates Button
+    citySearchHistoryBtnEl = document.createElement("button");
+    citySearchHistoryBtnEl.innerHTML = searchHistoryParse[0];
+    citySearchHistoryBtnEl.setAttribute('type', 'submit');
+    citySearchHistoryBtnEl.setAttribute('class', 'btn btn-secondary btn-block custom-btn');
+    citySearchHistoryBtnEl.setAttribute('display', 'block');
+
+    // Appends Button to Page
+    citySearchHistoryBtnContainerEl.appendChild(citySearchHistoryBtnEl);
+
+    // Adds Event Handler to Button
+    citySearchHistoryBtnEl.addEventListener("click", function (event) {
+        citySearchInputEl.value = $(this).html();
+        searchButtonHandler(event);
+    })
+};
+
+renderHistory();
