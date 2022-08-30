@@ -90,6 +90,15 @@ var searchButtonHandler = function (event) {
     }
 };
 
+searchButton.addEventListener('click', searchButtonHandler);
+
+// Creates Search History and Sets to Local Storage
+function createSearchHistory(citySearchInput) {
+    citySearchHistory.unshift(citySearchInput);
+    localStorage.setItem('searchHistory', JSON.stringify(citySearchHistory));
+    renderHistory();
+};
+
 // Renders Search History to Buttons
 function renderHistory() {
     var retrievedHistory = localStorage.getItem('searchHistory');
@@ -113,6 +122,21 @@ function renderHistory() {
 };
 
 renderHistory();
+
+function getLatLon(citySearchInput) {
+    var latLonApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + citySearchInput + '&appid=' + apiKey;
+
+    fetch(latLonApiUrl).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                lat = data.coord.lat;
+                lon = data.coord.lon;
+            }).then(getWeatherData);
+        } else {
+            alert('Error: ' + response.statusText);
+        }
+    });
+};
 
 function getWeatherData(citySearchInput) {
     var apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely,hourly,alerts&appid=' + apiKey;
