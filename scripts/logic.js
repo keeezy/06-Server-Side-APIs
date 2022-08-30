@@ -74,6 +74,10 @@ var day5HumidityEl = document.querySelector('#day5Humidity');
 // Button
 var searchButton = document.getElementById('search-button');
 
+// Date
+var today = new Date();
+var date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+
 // Handler for Search Button
 var searchButtonHandler = function (event) {
     event.preventDefault();
