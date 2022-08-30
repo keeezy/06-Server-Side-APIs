@@ -101,7 +101,24 @@ function getWeatherData(citySearchInput) {
                     currentUVIndexEl.classList.remove('custom-moderate');
                 };
 
-                
+                // Day 1
+                day1CardHeaderEl.textContent = (date + 1); //Doesn't Work
+                // Day 1 Icon
+                day1Icon = data.daily[0].weather[0].icon;
+                day1IconSource = ('https://openweathermap.org/img/wn/' + day1Icon + '@2x.png')
+                day1IconDescription = data.daily[0].weather[0].description;
+                day1IconEl.src = day1IconSource;
+                day1IconEl.alt = day1IconDescription;
+                // Day 1 Temp
+                tempK = data.daily[0].temp.day;
+                tempF = kToF(tempK) + " &#176F";
+                day1TempEl.innerHTML = tempF;
+                // Day 1 Wind Speed
+                day1WindEl.innerHTML = (data.daily[0].wind_speed + " MPH");
+                // Day 1 Humidity
+                day1HumidityEl.innerHTML = (data.daily[0].humidity + "%");
+
+
             });
         } else {
             alert('Error: ' + response.statusText);
