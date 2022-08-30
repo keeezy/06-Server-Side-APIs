@@ -20,3 +20,15 @@ var currentUVIndex;
 var weatherTodayIcon;
 var weatherTodayIconSource;
 var weatherTodayDescription;
+
+// Handler for Search Button
+var searchButtonHandler = function (event) {
+    event.preventDefault();
+    citySearchInput = citySearchInputEl.value.trim(); //TO DO: How to adjust for space/no space, comma, no comma, etc. Start with City, for now...
+    if (citySearchInput) {
+        getLatLon(citySearchInput);
+        createSearchHistory(citySearchInput);
+    } else {
+        alert('Please enter a City');
+    }
+};
