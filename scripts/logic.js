@@ -171,3 +171,7 @@ function getWeatherData(citySearchInput) {
         }
     });
 }
+
+function kToF(tempK) {
+    return Math.floor((tempK - 273.15) *1.8 +32);
+}
