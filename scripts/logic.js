@@ -198,7 +198,22 @@ function getWeatherData(citySearchInput) {
                 day1WindEl.innerHTML = (data.daily[0].wind_speed + " MPH");
                 // Day 1 Humidity
                 day1HumidityEl.innerHTML = (data.daily[0].humidity + "%");
-
+                // Day 2
+                day2CardHeaderEl.textContent = (date + 2); //Doesn't Work
+                // Day 2 Icon
+                day2Icon = data.daily[1].weather[0].icon;
+                day2IconSource = ('https://openweathermap.org/img/wn/' + day2Icon + '@2x.png')
+                day2IconDescription = data.daily[1].weather[0].description;
+                day2IconEl.src = day2IconSource;
+                day2IconEl.alt = day2IconDescription;
+                // Day 2 Temp
+                tempK = data.daily[1].temp.day;
+                tempF = kToF(tempK) + " &#176F";
+                day2TempEl.innerHTML = tempF;
+                // Day 2 Wind Speed
+                day2WindEl.innerHTML = (data.daily[1].wind_speed + " MPH");
+                // Day 2 Humidity
+                day2HumidityEl.innerHTML = (data.daily[1].humidity + "%");
                 // Day 3
                 day3CardHeaderEl.textContent = (date + 3); //Doesn't Work
                 // Day 3 Icon

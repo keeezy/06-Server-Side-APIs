@@ -15,15 +15,16 @@
     --c-white: #ffffff;
     --c-green: #007932;
     --c-red: #f00314;
+    --c-lred: #fcaaa8;
 }
 
 body {
     background-color: var(--c-lneutral);
-    color: var(--c-dblue);
+    color: var(--c-black);
 }
 
 .custom-header {
-    background-image: linear-gradient(to right, var(--c-blue), var(--c-dblue));
+    background-image: linear-gradient(to right, var(--c-red), var(--c-lred));
     padding: 2em;
 }
 
@@ -44,16 +45,16 @@ body {
 }
 
 .custom-btn {
-    background-color: var(--c-dblue);
+    background-color: var(--c--black);
 }
 
 .custom-card-header {
-    background-color: var(--c-blue) !important;
-    color: var(--c-dblue) !important;
+    background-color: var(--c-red) !important;
+    color: var(--c--black) !important;
 }
 
 .custom-card-body {
-    background-image: linear-gradient(var(--c-blue), var(--c-lblue));
+    background-image: linear-gradient(var(--c-red), var(--c-lred));
     line-height: 1.5rem !important;
     /*TO DO: Get this to work*/
 }
@@ -77,8 +78,4 @@ body {
     border-radius: .1em;
     padding: 0px .35px !important;
     /*TO DO: Get this to work*/
-}
-
-.custom-footer {
-    background-image: linear-gradient(to right, var(--c-blue), var(--c-dblue));
 }
